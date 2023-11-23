@@ -1697,6 +1697,11 @@ footer {
 	margin: -4.5em 0 4.25em -3.5em;
 }
 
+.services {
+	height: 200px;
+	overflow: hidden;
+}
+
 .box.post header {
 	padding-top: 1em;
 	margin: 0 0 2em 0;
@@ -2410,7 +2415,7 @@ ul.social li a.fa-google-plus:hover {
 #footer {
 	position: relative;
 	color: #858484;
-	padding: 4em 0;
+	/*padding: 4em 0;*/
 }
 
 #footer:before {
