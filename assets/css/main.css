@@ -96,6 +96,10 @@ video {
 	vertical-align: baseline;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 article,
 aside,
 details,
@@ -2188,7 +2192,7 @@ ul.social li a.fa-google-plus:hover {
 	position: relative;
 	background: #ffffff;
 	border-bottom: solid 1px #ccc;
-	padding: 5em 0 4em 0;
+	padding: 9em 0 4em 0;
 	text-align: center;
 }
 
@@ -2203,7 +2207,15 @@ ul.social li a.fa-google-plus:hover {
 /* Nav */
 
 #nav {
-	margin: 2.5em 0 0 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	cursor: default;
+	height: 3.5em;
+	line-height: 3.5em;
+	background-color: #282828;
 }
 
 #nav>ul {
@@ -2212,7 +2224,6 @@ ul.social li a.fa-google-plus:hover {
 
 #nav>ul>li {
 	display: inline-block;
-	font-style: italic;
 	margin: 0 0.35em 0 0.35em;
 }
 
@@ -2222,7 +2233,8 @@ ul.social li a.fa-google-plus:hover {
 
 #nav>ul>li>a {
 	border-radius: 5px;
-	color: #5d5d5d;
+	color: #ffffff;
+	font-weight: bold;
 	text-decoration: none;
 	padding: 0.6em 1.2em 0.6em 1.2em;
 	-moz-transition: background-color .25s ease-in-out;
@@ -2234,7 +2246,7 @@ ul.social li a.fa-google-plus:hover {
 
 #nav>ul>li:hover>a,
 #nav>ul>li.active>a {
-	background: #f3f3f3;
+	background: #686868;
 }
 
 #nav>ul>li.current>a {
@@ -2410,6 +2422,28 @@ ul.social li a.fa-google-plus:hover {
 	background: #f7f7f7 url("images/bg.png");
 }
 
+#aboutme {
+	position: relative;
+	background: #f7f7f7 url("images/bg.png");
+	padding: 4em 0 4em 0;
+}
+
+#aboutme:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: url("images/bg.png");
+	background-size: 100% 100%;
+	z-index: 0;
+	opacity: 0.1;
+}
+
+#aboutme .major h2 {
+	background: #f7f7f7 url("images/bg.png");
+}
+
 /* Footer */
 
 #footer {
@@ -2532,7 +2566,7 @@ ul.social li a.fa-google-plus:hover {
 	/* Header */
 
 	#header {
-		padding: 4em 0 3em 0;
+		padding: 7em 0 3em 0;
 	}
 
 	/* Banner */
@@ -2626,7 +2660,7 @@ ul.social li a.fa-google-plus:hover {
 	/* Header */
 
 	#header {
-		padding: 3.5em 0 3em 0;
+		padding: 6em 0 3em 0;
 	}
 
 	/* Nav */
@@ -2998,7 +3032,7 @@ ul.social li a.fa-google-plus:hover {
 
 	#header {
 		text-align: center;
-		padding: 2em 0;
+		padding: 4em 0;
 	}
 
 	#header h1 {

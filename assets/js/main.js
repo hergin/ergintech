@@ -34,13 +34,13 @@
 	// Nav.
 
 	// Title Bar.
-	/*	$(
-			'<div id="titleBar">' +
-				'<a href="#navPanel" class="toggle"></a>' +
-			'</div>'
-		)
-			.appendTo($body);
-*/
+	$(
+		'<div id="titleBar">' +
+		'<a href="#navPanel" class="toggle"></a>' +
+		'</div>'
+	)
+		.appendTo($body);
+
 	// Panel.
 	$(
 		'<div id="navPanel">' +
@@ -51,7 +51,7 @@
 	)
 		.appendTo($body)
 		.panel({
-			delay: 500,
+			delay: 200,
 			hideOnClick: true,
 			hideOnSwipe: true,
 			resetScroll: true,
