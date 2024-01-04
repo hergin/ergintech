@@ -2422,13 +2422,13 @@ ul.social li a.fa-google-plus:hover {
 	background: #f7f7f7 url("images/bg.png");
 }
 
-#aboutme {
+#aboutceo {
 	position: relative;
 	background: #f7f7f7 url("images/bg.png");
 	padding: 4em 0 4em 0;
 }
 
-#aboutme:before {
+#aboutceo:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -2440,7 +2440,7 @@ ul.social li a.fa-google-plus:hover {
 	opacity: 0.1;
 }
 
-#aboutme .major h2 {
+#aboutceo .major h2 {
 	background: #f7f7f7 url("images/bg.png");
 }
 
