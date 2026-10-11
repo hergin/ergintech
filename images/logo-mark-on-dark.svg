@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Ergin Technologies">
+	<g fill="#ffffff">
+		<circle cx="16" cy="23" r="5.5" />
+		<circle cx="44" cy="23" r="5.5" />
+		<circle cx="16" cy="51" r="5.5" />
+		<circle cx="72" cy="79" r="5.5" />
+	</g>
+	<path d="M16 79H44V51H72V21M59 34L72 21L85 34" fill="none" stroke="#ff5a63" stroke-width="10"
+		stroke-linecap="round" stroke-linejoin="round" />
+</svg>
