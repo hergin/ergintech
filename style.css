@@ -322,18 +322,6 @@ a {
     text-anchor: middle;
 }
 
-.sim-svg .badge-icon {
-    fill: none;
-    stroke: #ff7c84;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.sim-svg .badge-bolt {
-    fill: #7fe3b0;
-}
-
 .sim-svg .lane-today .badge {
     fill: #ff7c84;
 }
@@ -362,12 +350,12 @@ a {
     fill: #aab0d6;
 }
 
-.sim-svg .lane-today .station-key rect {
+.sim-svg .lane-today .station rect {
     fill: #4a1733;
     stroke: #ff5a63;
 }
 
-.sim-svg .lane-optimized .station-key rect {
+.sim-svg .lane-optimized .station rect {
     fill: #143f3a;
     stroke: #7fe3b0;
 }
@@ -390,6 +378,7 @@ a {
 
 .sim-caption {
     margin: 12px 0 0;
+    text-align: center;
     font-size: 0.88rem;
     line-height: 1.45;
     color: #a4a9cc;
@@ -771,6 +760,57 @@ a {
     margin-top: 24px;
 }
 
+/* Questions */
+
+.faq {
+    display: grid;
+    gap: 10px;
+    align-items: start;
+}
+
+.faq details {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    flex: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--red);
+}
+
+.faq details[open] summary::after {
+    content: "\2212";
+}
+
+.faq summary h3 {
+    font-size: 1.08rem;
+    line-height: 1.35;
+}
+
+.faq details p {
+    margin: 0;
+    padding: 0 22px 20px;
+    color: var(--muted);
+}
+
 /* Closing and footer */
 
 .closing {
@@ -891,6 +931,11 @@ a {
 
     .case-cta {
         grid-column: span 2;
+    }
+
+    .faq {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 20px;
     }
 
     .feature-body {

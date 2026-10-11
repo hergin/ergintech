@@ -18,7 +18,8 @@
     }
 
     // Hero illustration: the same orders run through two lanes at once.
-    // In "today" the middle step is slow, so orders pile up in front of it.
+    // In "today" every step is slow and the last one sends in batches,
+    // so orders pile up along the lane.
     var svg = document.getElementById('sim');
     if (!svg) return;
 
@@ -27,10 +28,11 @@
     var START = 14, END = 386, SPEED = 130, GAP = 18, SIZE = 13, ARRIVAL = 0.7;
     var RUN = 24, HOLD = 3.5;
 
-    function lane(key, y, service) {
+    function lane(key, y, service, batch) {
         return {
             y: y,
             service: service,
+            batch: batch || 0, // the last step holds orders until this many wait
             layer: document.getElementById('sim-items-' + key),
             countEl: document.getElementById('sim-count-' + key),
             items: [], // front of the line first
@@ -40,8 +42,8 @@
     }
 
     var lanes = [
-        lane('today', 62, [0.3, 1.5, 0.3]),
-        lane('optimized', 176, [0.3, 0.3, 0.3])
+        lane('today', 68, [0.9, 1.5, 0], 3),
+        lane('optimized', 190, [0.3, 0.3, 0.3])
     ];
     var clock = 0;
 
@@ -53,13 +55,30 @@
         el.setAttribute('rx', 3);
         el.setAttribute('y', ln.y - SIZE / 2);
         ln.layer.appendChild(el);
-        ln.items.push({ x: START, stage: 0, serving: 0, blocked: false, el: el });
+        ln.items.push({ x: START, stage: 0, serving: 0, held: false, blocked: false, el: el });
+    }
+
+    // Sends the waiting orders on together once a full batch has collected.
+    function releaseBatch(ln) {
+        var items = ln.items, last = STATIONS.length - 1, h = 0, n = 1;
+        while (h < items.length && !items[h].held) h++;
+        if (h === items.length) return;
+        while (h + n < items.length && items[h + n].stage === last && items[h + n].blocked) n++;
+        if (n < ln.batch) return;
+        for (var k = 0; k < ln.batch; k++) {
+            items[h + k].held = false;
+            items[h + k].stage = last + 1;
+        }
     }
 
     function stepLane(ln, dt) {
         var items = ln.items;
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
+            if (it.held) {
+                it.blocked = true;
+                continue;
+            }
             if (it.serving > 0) {
                 it.serving -= dt;
                 if (it.serving <= 0) {
@@ -74,8 +93,12 @@
             var free = it.x + SPEED * dt;
             it.blocked = limit < free && limit < stop;
             it.x = Math.max(it.x, Math.min(free, stop, limit));
-            if (it.x >= stop) it.serving = ln.service[it.stage];
+            if (it.x >= stop) {
+                if (ln.batch && it.stage === STATIONS.length - 1) it.held = true;
+                else it.serving = ln.service[it.stage];
+            }
         }
+        if (ln.batch) releaseBatch(ln);
         while (items.length && items[0].x >= END) {
             items.shift().el.remove();
             ln.finished++;
