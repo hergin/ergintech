@@ -82,6 +82,14 @@
 				"mainEntity": [
 					{
 						"@type": "Question",
+						"name": "What is custom software?",
+						"acceptedAnswer": {
+							"@type": "Answer",
+							"text": "Software built for one company: yours. No software should have to serve thousands of companies. Not in this age. So it is built for you, the way a tailored suit is made to your measurements, and it is yours. Some call it bespoke or tailor-made software."
+						}
+					},
+					{
+						"@type": "Question",
 						"name": "How much does custom software cost?",
 						"acceptedAnswer": {
 							"@type": "Answer",
@@ -576,6 +584,7 @@ a {
 
 .why p {
     margin: 0;
+    text-align: center;
     font-size: 1.35rem;
     font-weight: 600;
     line-height: 1.35;
@@ -1308,6 +1317,10 @@ a {
         gap: 12px 20px;
     }
 
+    .faq details:first-child {
+        grid-column: 1 / -1;
+    }
+
     .feature-body {
         padding: 36px;
     }
@@ -1414,7 +1427,7 @@ a {
 		<!-- Why -->
 		<section class="why">
 			<div class="container why-grid">
-				<p>Off-the-shelf software fits everyone roughly, and <strong>no one exactly</strong>.</p>
+				<p>No software should have to serve thousands of companies. <strong>Not in this age.</strong></p>
 				<p>AI agents now do the building, so software <strong>made only for you</strong> is within reach.</p>
 			</div>
 		</section>
@@ -1804,6 +1817,12 @@ a {
 					<h2>Common questions</h2>
 				</header>
 				<div class="faq">
+					<details>
+						<summary>
+							<h3>What is custom software?</h3>
+						</summary>
+						<p>Software built for one company: yours. No software should have to serve thousands of companies. Not in this age. So it is built for you, the way a tailored suit is made to your measurements, and it is yours. Some call it bespoke or tailor-made software.</p>
+					</details>
 					<details>
 						<summary>
 							<h3>How much does custom software cost?</h3>
