@@ -16,7 +16,7 @@
 	<meta property="og:url" content="https://ergin.tech/">
 	<meta property="og:title" content="Software should fit your company. Not the other way around.">
 	<meta property="og:description"
-		content="Bring a problem in how your company runs. See a working model of it before you commit to anything.">
+		content="Let's look at what slows your company down. You'll usually see a working model of the fix before you commit.">
 	<meta property="og:image" content="https://ergin.tech/images/og-image.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Software should fit your company. Not the other way around.">
 	<meta name="twitter:description"
-		content="Bring a problem in how your company runs. See a working model of it before you commit to anything.">
+		content="Let's look at what slows your company down. You'll usually see a working model of the fix before you commit.">
 	<meta name="twitter:image" content="https://ergin.tech/images/og-image.png">
 	<meta name="theme-color" content="#10143a">
 	<script type="application/ld+json">
@@ -85,7 +85,7 @@
 						"name": "How much does custom software cost?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "It depends on the problem, so I don't quote before I understand it. The first meeting is free, and in most cases you see a working model before you commit. We start with one small piece and grow from what works."
+							"text": "It depends on the problem, so I don't quote before I understand it. The first meeting is free, and you'll usually see a working model before you commit. We start with one small piece and grow from what works."
 						}
 					},
 					{
@@ -109,7 +109,7 @@
 						"name": "Is software built by AI agents reliable?",
 						"acceptedAnswer": {
 							"@type": "Answer",
-							"text": "The agents write the code and the tests. I review every change, and nothing reaches you until it passes. Behind that review are more than 15 years of building software in industry, and teaching and researching software engineering as a professor. I answer for the result."
+							"text": "The agents write the code and the tests. I review every change, and nothing reaches you until it meets my standard. Behind that review are more than 15 years of building software in industry, and teaching and researching software engineering as a professor. I answer for the result."
 						}
 					},
 					{
@@ -189,9 +189,9 @@
 		<section class="hero">
 			<div class="container hero-grid">
 				<div class="hero-text">
-					<p class="eyebrow">Custom software, built for one company: yours</p>
+					<p class="eyebrow hero-kicker">Custom software, built for one company: <span class="yours">yours</span></p>
 					<h1>Software should fit your company. <span class="accent">Not the other way around.</span></h1>
-					<p class="lead">Bring me a problem in how your company runs. In most cases you see a working model of it
+					<p class="lead">Let's look at what slows your company down. You'll usually see a working model of the fix
 						before you commit.</p>
 					<div class="actions">
 						<a class="btn btn-primary" target="_blank" rel="noopener"
@@ -456,34 +456,66 @@
 					<p class="eyebrow">How it's built</p>
 					<h2>An expert leads. AI agents build.</h2>
 				</header>
-				<div class="grid grid-2 roles">
-					<article class="card role-card">
-						<h3>I do the thinking</h3>
-						<ul>
-							<li>Understand the problem</li>
-							<li>Decide what is worth building</li>
-							<li>Review everything, and answer for the result</li>
-						</ul>
-					</article>
-					<article class="card role-card">
-						<h3>My AI agents do the building</h3>
-						<ul>
-							<li>Write the code</li>
-							<li>Write and run the tests</li>
-							<li>Handle routine upkeep</li>
-						</ul>
-					</article>
+				<div class="card flow">
+					<div class="flow-end flow-in">
+						<strong>Your problem</strong>
+						<span>How things run today</span>
+					</div>
+					<svg class="flow-arrow" viewBox="0 0 40 24" aria-hidden="true">
+						<path d="M3 12h33m-9-8 9 8-9 8" />
+					</svg>
+					<div class="flow-core">
+						<svg class="flow-svg" viewBox="0 0 360 150" role="img"
+							aria-label="The expert decides what to build, three AI agents build it, and the expert reviews the result. Work that does not pass goes back to the agents.">
+							<path class="flow-line" d="M84 75C125 75 125 30 166 30M84 75H166M84 75C125 75 125 120 166 120" />
+							<path class="flow-line" d="M194 30C235 30 235 75 276 75M194 75H276M194 120C235 120 235 75 276 75" />
+							<path class="flow-back" d="M300 51C300 18 240 8 198 22M207.8 24L198 22L204.6 14.5" />
+							<circle class="flow-me" cx="60" cy="75" r="24" />
+							<circle class="flow-glyph" cx="60" cy="67" r="6" />
+							<path class="flow-glyph" d="M47 89c0-8 6-12 13-12s13 4 13 12Z" />
+							<rect class="flow-agent" x="167" y="17" width="26" height="26" rx="8" />
+							<rect class="flow-agent" x="167" y="62" width="26" height="26" rx="8" />
+							<rect class="flow-agent" x="167" y="107" width="26" height="26" rx="8" />
+							<circle class="flow-me" cx="300" cy="75" r="24" />
+							<path class="flow-check" d="M289 76l8 8 15-18" />
+						</svg>
+						<ol class="flow-caps">
+							<li><strong>I decide</strong> what is worth building</li>
+							<li><strong>My AI agents</strong> write the code and the tests</li>
+							<li><strong>I review</strong> every change until it meets my standard</li>
+						</ol>
+					</div>
+					<svg class="flow-arrow" viewBox="0 0 40 24" aria-hidden="true">
+						<path d="M3 12h33m-9-8 9 8-9 8" />
+					</svg>
+					<div class="flow-end flow-out">
+						<strong>Your software</strong>
+						<span>Built for your company alone</span>
+					</div>
 				</div>
 				<div class="grid grid-3 principles">
 					<article>
+						<svg class="p-icon" viewBox="0 0 48 48" aria-hidden="true">
+							<path d="M24 5l15 6v11c0 10-6.5 17-15 21-8.5-4-15-11-15-21V11Z" />
+							<path class="r" d="M17 24l5 5 9-11" />
+						</svg>
 						<h3>Nothing ships unreviewed</h3>
-						<p>I review every change, and it must pass its tests.</p>
+						<p>Every change is tested, and it ships only when I am satisfied with it.</p>
 					</article>
 					<article>
+						<svg class="p-icon" viewBox="0 0 48 48" aria-hidden="true">
+							<path d="M5 17c4-11 8 9 12 0s8 9 12 0 8 9 14-3" />
+							<path class="r" d="M5 36h38" />
+						</svg>
 						<h3>The simple answer wins</h3>
 						<p>If a simple solution does the job, I will say so.</p>
 					</article>
 					<article>
+						<svg class="p-icon" viewBox="0 0 48 48" aria-hidden="true">
+							<circle cx="15" cy="24" r="9" />
+							<path d="M24 24h19M37 24v7M43 24v5" />
+							<circle class="r" cx="15" cy="24" r="2.5" />
+						</svg>
 						<h3>You own it</h3>
 						<p>The code and documentation are yours. I maintain it, or teach your team to.</p>
 					</article>
@@ -601,7 +633,7 @@
 						<summary>
 							<h3>How much does custom software cost?</h3>
 						</summary>
-						<p>It depends on the problem, so I don't quote before I understand it. The first meeting is free, and in most cases you see a working model before you commit. We start with one small piece and grow from what works.</p>
+						<p>It depends on the problem, so I don't quote before I understand it. The first meeting is free, and you'll usually see a working model before you commit. We start with one small piece and grow from what works.</p>
 					</details>
 					<details>
 						<summary>
@@ -619,7 +651,7 @@
 						<summary>
 							<h3>Is software built by AI agents reliable?</h3>
 						</summary>
-						<p>The agents write the code and the tests. I review every change, and nothing reaches you until it passes. Behind that review are more than 15 years of building software in industry, and teaching and researching software engineering as a professor. I answer for the result.</p>
+						<p>The agents write the code and the tests. I review every change, and nothing reaches you until it meets my standard. Behind that review are more than 15 years of building software in industry, and teaching and researching software engineering as a professor. I answer for the result.</p>
 					</details>
 					<details>
 						<summary>
@@ -652,7 +684,7 @@
 		<!-- Closing -->
 		<section class="closing">
 			<div class="container">
-				<h2>Bring me your problem.</h2>
+				<h2>What's slowing your company down?</h2>
 				<p>The first meeting is free.</p>
 				<a class="btn btn-primary" target="_blank" rel="noopener"
 					href="https://calendly.com/hergin/consult">Let's explore your problem</a>

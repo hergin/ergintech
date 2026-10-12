@@ -257,6 +257,23 @@ a {
     color: #ff7c84;
 }
 
+.hero .hero-kicker {
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+    letter-spacing: 0.06em;
+    line-height: 1.6;
+    color: #e6e8f7;
+    margin-bottom: 18px;
+    text-wrap: balance;
+}
+
+.hero-kicker .yours {
+    display: inline-block;
+    padding: 0 0.55em;
+    border-radius: 6px;
+    background: #ff5a63;
+    color: var(--ink);
+}
+
 .lead {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -665,13 +682,151 @@ a {
 
 /* How it's built */
 
-.role-card ul {
-    margin: 0;
-    padding-left: 1.2em;
+.flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
 }
 
-.role-card li {
-    margin-bottom: 6px;
+.flow-end {
+    width: 100%;
+    max-width: 520px;
+    padding: 16px 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.flow-end strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.flow-end span {
+    font-size: 0.92rem;
+}
+
+.flow-in {
+    background: var(--soft);
+    border: 2px solid var(--navy);
+    color: var(--ink);
+}
+
+.flow-in span {
+    color: var(--muted);
+}
+
+.flow-out {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.flow-out span {
+    color: #c7cbe6;
+}
+
+.flow-arrow {
+    flex: none;
+    width: 36px;
+    height: 22px;
+    transform: rotate(90deg);
+    fill: none;
+    stroke: var(--navy);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* On narrow screens the arrows line up with "I decide" and "I review". */
+.flow > .flow-arrow:first-of-type {
+    align-self: flex-start;
+    margin-left: calc((100% - min(100%, 520px)) / 2 + min(100%, 520px) / 6 - 18px);
+}
+
+.flow > .flow-arrow:last-of-type {
+    align-self: flex-end;
+    margin-right: calc((100% - min(100%, 520px)) / 2 + min(100%, 520px) / 6 - 18px);
+}
+
+.flow-core {
+    width: 100%;
+    max-width: 520px;
+}
+
+.flow-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.flow-line {
+    fill: none;
+    stroke: var(--navy);
+    stroke-width: 2.5;
+}
+
+.flow-back {
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 2;
+    stroke-dasharray: 3 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.flow-me {
+    fill: var(--red);
+}
+
+.flow-agent {
+    fill: var(--navy);
+}
+
+.flow-glyph {
+    fill: var(--white);
+}
+
+.flow-check {
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.flow-caps {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    text-align: center;
+    font-size: 0.92rem;
+    line-height: 1.35;
+    color: var(--muted);
+}
+
+.flow-caps strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.p-icon {
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+    fill: none;
+    stroke: var(--navy);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.p-icon .r {
+    stroke: var(--red);
 }
 
 .principles {
@@ -965,6 +1120,28 @@ a {
 
     .feature {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .flow {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 32px;
+    }
+
+    .flow-end {
+        width: 210px;
+    }
+
+    .flow > .flow-arrow:first-of-type,
+    .flow > .flow-arrow:last-of-type {
+        align-self: center;
+        margin: 0;
+        transform: none;
+    }
+
+    .flow-core {
+        flex: 1;
     }
 
     .case-cta {
